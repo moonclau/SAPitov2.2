@@ -3,12 +3,16 @@
     Created on : 6/10/2018, 05:36:57 PM
     Author     : claudia
 --%>
-
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
+<%@page import="com.sap.inventario.clases.Merma"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Inventario Merma</title>
 <!-- Bootstrap -->
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -101,58 +105,25 @@
                                 <th>Descripcion</th>
                                 <th>Tipo merma</th>
                             </tr>
-                            <tr>                                
-                                <td>01</td>
-                                <td>01</td>
-                                <td>Blusa</td>
-                                <td>Ropa</td>
-                                <td>Puma</td>                   
-                                <td>5</td>
-                                <td>pieza</td>
-                                <td>100</td>
-                                <td>04/10/2018</td>
-                                <td>Descostura en mangas por transporte</td>
-                                <td>Normal</td>
-                            </tr>
-                            <tr>                                     
-                                <td>02</td>
-                                <td>40</td>
-                                <td>Martillo</td>
-                                <td>Herramienta</td>
-                                <td>Truper</td>                   
-                                <td>1</td>
-                                <td>pieza</td>
-                                <td>150</td>
-                                <td>04/10/2018</td>
-                                <td>desgarre en el mango</td>
-                                <td>Normal</td>
-                            </tr>
-                            <tr>                                    
-                                <td>01</td>
-                                <td>01</td>
-                                <td>Blusa</td>
-                                <td>Ropa</td>
-                                <td>Puma</td>                   
-                                <td>5</td>
-                                <td>pieza</td>
-                                <td>100</td>
-                                <td>04/10/2018</td>
-                                <td>Descostura en mangas por transporte</td>
-                                <td>Normal</td>
-                            </tr>
-                            <tr>                                     
-                                <td>01</td>
-                                <td>01</td>
-                                <td>Blusa</td>
-                                <td>Ropa</td>
-                                <td>Puma</td>                   
-                                <td>5</td>
-                                <td>pieza</td>
-                                <td>100</td>
-                                <td>04/10/2018</td>
-                                <td>Descostura en mangas por transporte</td>
-                                <td>Normal</td>
-                            </tr>
+                           <%
+                    LinkedList<Merma> lista =Consultas.consultasmerma();
+                    for (int i=0;i<lista.size();i++)
+                    {
+                       out.println("<tr>");
+                       out.println("<td>"+lista.get(i).getClave()+"</td>");
+                       out.println("<td>"+lista.get(i).getClavep()+"</td>");
+                       out.println("<td>"+lista.get(i).getNombrep()+"</td>");                           
+                       out.println("<td>"+lista.get(i).getTipop()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getNombrepv()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getUnidadp()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getCostoup()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getFecha()+"</td>");                                                                   
+                       out.println("<td>"+lista.get(i).getDescripcion()+"</td>");      
+                       out.println("<td>"+lista.get(i).getTipom()+"</td>");
+                       out.println("</tr>");
+                    }
+                %>
                         </table>               
             </div>
                 <!--FIN TABLA MN-->
