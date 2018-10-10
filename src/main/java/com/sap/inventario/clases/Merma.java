@@ -13,13 +13,18 @@ public class Merma {
     String clave;
     String clavep;
     String nombrep;
-    String tipop;
-    String nombrepv;
+    String clavepv;
     int cantidad;
-    String unidadp;
-    double costoup;
     String fecha;
     String descripcion;
+
+    public String getClavepv() {
+        return clavepv;
+    }
+
+    public void setClavepv(String clavepv) {
+        this.clavepv = clavepv;
+    }
     String tipom;
 
     public String getTipom() {
@@ -54,44 +59,12 @@ public class Merma {
         this.nombrep = nombrep;
     }
 
-    public String getTipop() {
-        return tipop;
-    }
-
-    public void setTipop(String tipop) {
-        this.tipop = tipop;
-    }
-
-    public String getNombrepv() {
-        return nombrepv;
-    }
-
-    public void setNombrepv(String nombrepv) {
-        this.nombrepv = nombrepv;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public String getUnidadp() {
-        return unidadp;
-    }
-
-    public void setUnidadp(String unidadp) {
-        this.unidadp = unidadp;
-    }
-
-    public Double getCostoup() {
-        return costoup;
-    }
-
-    public void setCostoup(double costoup) {
-        this.costoup = costoup;
     }
 
     public String getFecha() {

@@ -96,11 +96,8 @@
                                 <th>ID merma</th>
                                 <th>ID producto</th>
                                 <th>Nombre</th>
-                                <th>Tipo</th>
                                 <th>Proveedor</th>
                                 <th>Cantidad</th>
-                                <th>Unidad</th>
-                                <th>Costo Unitario</th>
                                 <th>Fecha</th>
                                 <th>Descripcion</th>
                                 <th>Tipo merma</th>
@@ -112,18 +109,15 @@
                        out.println("<tr>");
                        out.println("<td>"+lista.get(i).getClave()+"</td>");
                        out.println("<td>"+lista.get(i).getClavep()+"</td>");
-                       out.println("<td>"+lista.get(i).getNombrep()+"</td>");                           
-                       out.println("<td>"+lista.get(i).getTipop()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getNombrep()+"</td>");                                                                                           
                        out.println("<td>"+lista.get(i).getNombrepv()+"</td>");                                                                  
-                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                                  
-                       out.println("<td>"+lista.get(i).getUnidadp()+"</td>");                                                                  
-                       out.println("<td>"+lista.get(i).getCostoup()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                                                                                                    
                        out.println("<td>"+lista.get(i).getFecha()+"</td>");                                                                   
                        out.println("<td>"+lista.get(i).getDescripcion()+"</td>");      
                        out.println("<td>"+lista.get(i).getTipom()+"</td>");
                        out.println("</tr>");
                     }
-                %>
+               /%>
                         </table>               
             </div>
                 <!--FIN TABLA MN-->

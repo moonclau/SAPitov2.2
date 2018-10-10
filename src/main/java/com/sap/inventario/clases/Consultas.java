@@ -36,11 +36,8 @@ public class Consultas {
                 im.setClave(rs.getString("clave"));
                 im.setClavep(rs.getString("claveproducto"));
                 im.setNombrep(rs.getString("producto"));
-                im.setTipop(rs.getString("tipo"));
-                im.setNombrepv(rs.getString("provedor"));
+                im.setClavepv(rs.getString("proveedor"));
                 im.setCantidad(rs.getInt("cantidad"));
-                im.setUnidadp(rs.getString("unidad"));
-                im.setCostoup(rs.getDouble("costop"));
                 im.setFecha(rs.getString("fecha")); 
                 im.setDescripcion(rs.getString("descripcion"));   
                 im.setTipom(rs.getString("merma"));  
