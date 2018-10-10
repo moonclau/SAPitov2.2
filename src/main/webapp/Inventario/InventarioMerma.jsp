@@ -28,13 +28,13 @@
             <div class="collapse navbar-collapse" id="int_navbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href=" " class="nav-link text-white">Inventario&nbsp;General</a>
+                        <a href="InventarioGeneral.jsp" class="nav-link text-white">Inventario&nbsp;General</a>
                     </li>                   
                     <li class="nav-item">
-                        <a href=" " class="nav-link text-white">Inventario&nbsp;Entradas</a>
+                        <a href="InventarioEntradas.jsp" class="nav-link text-white">Inventario&nbsp;Entradas</a>
                     </li>    
                     <li class="nav-item">
-                        <a href=" " class="nav-link text-white">Inventario&nbsp;Salidas</a>
+                        <a href="InventarioSalida.jsp" class="nav-link text-white">Inventario&nbsp;Salidas</a>
                     </li> 
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="merma" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Merma</a>

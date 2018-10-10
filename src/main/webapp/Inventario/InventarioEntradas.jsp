@@ -1,6 +1,6 @@
 <%-- 
-    Document   : InventarioMermaAgregar
-    Created on : 6/10/2018, 10:44:45 PM
+    Document   : InventarioEntradas
+    Created on : 9/10/2018, 06:24:49 PM
     Author     : claudia
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inventario Merma Agregar</title>
+        <title>Inventario Entrada</title>
 <!-- Bootstrap -->
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -17,9 +17,8 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
-    </head>
-    <body>
-        <header class="sticky-top">
+</head>
+<body><header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href=" " class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,32 +58,109 @@
         </nav>
     </header>      
     <br/><br/>
-    <div class="row">
     <!--Panel-->
-    <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
+    <div class="row">
+    <div class="col-sm-3 ">
         <div class="card" text-center>
             <div class="card-body">
-                <h3 class="card-title" >Agregar Producto en Merma</h3><br><br>
-                <!--INICIO CUESTIONARIO-->
-                <label class="card-text">Ingrese el id del producto:</label><br>
-                <input type="text" id="mip" name="mip" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el id del proveedor:</p>
-                <input type="text" id="mipr" name="impr" class="form-control form-control-sm" />
-                <label class="card-text">Ingrese la cantidad:</label><br>
-                <input type="text" id="mc" name="mc" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la fecha</p>
-                <input type="text" id="mf" name="mf" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la descripcion</p>
-                <input type="text" id="md" name="md" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese tipo de merma</p>
-                <input type="text" id="mt" name="mt" class="form-control form-control-sm" /><br><br>
-                <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
+                <h4>Consulta</h4>
+                 <div class="col-xs-offset-1 col-md-offset-1 central">
+                  <form>
+                  <h5>Buscar ID Compra</h5>
+                  </form>
+                </div>
+                    <div class="col-xs-10 col-md-10 central">
+                    <form action="" method="post">
+                    <input name="clave" type="text" placeholder="ID Compra"/> 
+                    <input type="submit" value="Buscar"/>
+                    <h4>Reporte</h4>
+                    <div class="col-xs-offset-0 col-md-offset-0 central">
+                    <input type="submit" value="Generar"/>
+                    </div>  
+                </form>
+              </div>
             </div>
         </div>
     </div>
-    <!--/.Panel-->
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-body">
+      <div class="col-xs-offset-6 col-md-offset-6 central">
+              <div class="container">
+                <h4>Productos</h4>
+              </div>
+            </div>
+    <table class="table-striped table table-bordered table-hover">
+      <tr>
+        <th>
+          ID Compra
+        </th>
+      
+        <th>
+          ID Producto
+        </th>
+      
+        <th>
+          Nombre Producto
+        </th>
+      
+        <th>
+          Tipo
+        </th>
+      
+        <th>
+          Proveedor
+        </th>
+        <th>
+          Cantidad
+        </th>
+        <th>
+          Unidad
+        </th>
+        <th>
+          Costo Unitario
+        </th>
+        <th>
+          Lote
+        </th>
+      </tr>
+
+
+      <tr>
+        <td>12345</td>
+        <td>Reloj</td>
+        <td>Accesorio</td>
+        <td>Jose</td>
+        <td>3</td>
+        <td>Pieza</td>
+        <td>$1500</td>
+        <td>$2000</td>
+        <td>150</td>
+        
+
+      </tr>
+      <tr>
+        <td>87653</td>
+        <td>Mochila</td>
+        <td>Accesorio</td>
+        <td>Jose</td>
+        <td>3</td>
+        <td>Pieza</td>
+        <td>$1500</td>
+        <td>$2000</td>
+        <td>150</td>
+        
+      </tr>
+    </table>
+       </div>
+        </div>
+    </div>     
     
-</div>
-    
-    </body>
+    </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jQuery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
 </html>
