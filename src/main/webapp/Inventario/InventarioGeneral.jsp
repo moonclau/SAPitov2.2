@@ -4,6 +4,9 @@
     Author     : claudia
 --%>
 
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.inventario.clases.Inventario"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,13 +46,9 @@
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="devoluciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devoluciones</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="dev">
+                    <li class="nav-item">
                             <a class="nav-link text-white" href="InventarioDevoluciones.jsp">Devoluciones</a>
-                            <a class="nav-link text-white" href="InventarioDevAgregar.jsp">Agregar&nbsp;Devolucion</a>                                    
-                        </div>
-                    </li>                            
+                    </li>          
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
@@ -101,7 +100,7 @@
     <table class="table-striped table table-bordered table-hover">
       <tr>
         <th>
-          ID
+          clave productp
         </th>
       
         <th>
@@ -135,33 +134,24 @@
           Fecha
         </th>
       </tr>
-
-
-      <tr>
-        <td>12345</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        <td>20/09/18</td>
-
-      </tr>
-      <tr>
-        <td>87653</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        <td>20/09/18</td>
-      </tr>
+<%/*
+                    LinkedList<Inventario> lista =Consultas.consultasinventariogenerales();
+                    for (int i=0;i<lista.size();i++)
+                    {
+                       out.println("<tr>");
+                       out.println("<td>"+lista.get(i).getClave()+"</td>");
+                       out.println("<td>"+lista.get(i).getNombre()+"</td>");
+                       out.println("<td>"+lista.get(i).getTipo()+"</td>");                                                                                           
+                       out.println("<td>"+lista.get(i).getProveedor()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                               
+                       out.println("<td>"+lista.get(i).getUnidad()+"</td>");      
+                       out.println("<td>"+lista.get(i).getCostounitario()+"</td>");                                                                 
+                       out.println("<td>"+lista.get(i).getCostoventa()+"</td>");      
+                       out.println("<td>"+lista.get(i).getIva()+"</td>");                                                                                                                                  
+                       out.println("<td>"+lista.get(i).getFecha()+"</td>");    
+                       out.println("</tr>");
+                    }
+    */           %>
     </table>
         </div>
         </div>

@@ -4,6 +4,9 @@
     Author     : claudia
 --%>
 
+<%@page import="com.sap.inventario.clases.Salidas"%>
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,13 +46,9 @@
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="devoluciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devoluciones</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="dev">
+                    <li class="nav-item">
                             <a class="nav-link text-white" href="InventarioDevoluciones.jsp">Devoluciones</a>
-                            <a class="nav-link text-white" href="InventarioDevAgregar.jsp">Agregar&nbsp;Devolucion</a>                                    
-                        </div>
-                    </li>                            
+                    </li>          
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
@@ -134,31 +133,23 @@
         </th>
       </tr>
 
-
-      <tr>
-        <td>12345</td>
-        <td>123</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>3</td>
-        <td>$1500</td>
-        <td>$20</td>
-        <td>24/02/2018</td>
-        <td>$1520</td>
-        
-
-      </tr>
-      <tr>
-        <td>12345</td>
-        <td>123</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>3</td>
-        <td>$1500</td>
-        <td>$20</td>
-        <td>24/02/2018</td>
-        <td>$1520</td>
-        
+<%
+                    LinkedList<Salidas> lista =Consultas.consultasSalidas();
+                    for (int i=0;i<lista.size();i++)
+                    {
+                       out.println("<tr>");
+                       out.println("<td>"+lista.get(i).getClaveProducto()+"</td>");
+                       out.println("<td>"+lista.get(i).getClaveVenta()+"</td>");
+                       out.println("<td>"+lista.get(i).getProducto()+"</td>");
+                       out.println("<td>"+lista.get(i).getTipo()+"</td>");                                                                       
+                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                                                       
+                       out.println("<td>"+lista.get(i).getCostoVenta()+"</td>");                                                              
+                       out.println("<td>"+lista.get(i).getIva()+"</td>");      
+                       out.println("<td>"+lista.get(i).getFecha()+"</td>");                                                                 
+                       out.println("<td>"+lista.get(i).getMonto()+"</td>");  
+                       out.println("</tr>");
+                    }
+               %>
       </tr>
     </table>
         </div>

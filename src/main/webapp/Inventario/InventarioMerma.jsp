@@ -48,13 +48,9 @@
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="devoluciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devoluciones</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="dev">
+                    <li class="nav-item">
                             <a class="nav-link text-white" href="InventarioDevoluciones.jsp">Devoluciones</a>
-                            <a class="nav-link text-white" href="InventarioDevAgregar.jsp">Agregar&nbsp;Devolucion</a>                                    
-                        </div>
-                    </li>                            
+                    </li>          
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
@@ -110,14 +106,14 @@
                        out.println("<td>"+lista.get(i).getClave()+"</td>");
                        out.println("<td>"+lista.get(i).getClavep()+"</td>");
                        out.println("<td>"+lista.get(i).getNombrep()+"</td>");                                                                                           
-                       out.println("<td>"+lista.get(i).getNombrepv()+"</td>");                                                                  
+                       out.println("<td>"+lista.get(i).getClavepv()+"</td>");                                                                  
                        out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                                                                                                    
                        out.println("<td>"+lista.get(i).getFecha()+"</td>");                                                                   
                        out.println("<td>"+lista.get(i).getDescripcion()+"</td>");      
                        out.println("<td>"+lista.get(i).getTipom()+"</td>");
                        out.println("</tr>");
                     }
-               /%>
+               %>
                         </table>               
             </div>
                 <!--FIN TABLA MN-->

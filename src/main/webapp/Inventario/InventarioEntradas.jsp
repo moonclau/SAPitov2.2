@@ -4,6 +4,9 @@
     Author     : claudia
 --%>
 
+<%@page import="com.sap.inventario.clases.Entradas"%>
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -43,12 +46,8 @@
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="devoluciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devoluciones</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="dev">
+                    <li class="nav-item">
                             <a class="nav-link text-white" href="InventarioDevoluciones.jsp">Devoluciones</a>
-                            <a class="nav-link text-white" href="InventarioDevAgregar.jsp">Agregar&nbsp;Devolucion</a>                                    
-                        </div>
                     </li>                            
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
@@ -124,33 +123,23 @@
           Lote
         </th>
       </tr>
-
-
-      <tr>
-        <td>12345</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-
-      </tr>
-      <tr>
-        <td>87653</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-      </tr>
+<%/*
+                    LinkedList<Entradas> lista =Consultas.consultasEntradas();
+                    for (int i=0;i<lista.size();i++)
+                    {
+                       out.println("<tr>");
+                       out.println("<td>"+lista.get(i).getClaveCompra()+"</td>");
+                       out.println("<td>"+lista.get(i).getClaveProducto()+"</td>");                                                                                     
+                       out.println("<td>"+lista.get(i).getNombreP()+"</td>");  
+                       out.println("<td>"+lista.get(i).getTipo()+"</td>");      
+                       out.println("<td>"+lista.get(i).getClavePv()+"</td>");                                                             
+                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                              
+                       out.println("<td>"+lista.get(i).getUnidad()+"</td>");                                                                     
+                       out.println("<td>"+lista.get(i).getCostoUnitario()+"</td>");            
+                       out.println("<td>"+lista.get(i).getLote()+"</td>");      
+                       out.println("</tr>");
+                    }
+    */           %>
     </table>
        </div>
         </div>

@@ -44,13 +44,9 @@
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="devoluciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devoluciones</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="dev">
+                    <li class="nav-item">
                             <a class="nav-link text-white" href="InventarioDevoluciones.jsp">Devoluciones</a>
-                            <a class="nav-link text-white" href="InventarioDevAgregar.jsp">Agregar&nbsp;Devolucion</a>                                    
-                        </div>
-                    </li>                            
+                    </li>                                   
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
@@ -67,23 +63,23 @@
                 <h3 class="card-title" >Modificar Producto en Merma</h3><br><br>
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese el id de merma:</label><br>
-                <input type="text" id="mip" name="mim" class="form-control form-control-sm" />
+                <input type="text" id="mim" name="mim" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese el id del producto:</p>
-                <input type="text" id="mipr" name="mpr" class="form-control form-control-sm" />
+                <input type="text" id="mp" name="mp" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese el Nombre del producto:</label><br>
                 <input type="text" id="mip" name="mnp" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese el tipo o grupo del producto:</p>
-                <input type="text" id="mipr" name="mtp" class="form-control form-control-sm" />
+                <input type="text" id="mtp" name="mtp" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese el id del proveedor:</label><br>
-                <input type="text" id="mip" name="mip" class="form-control form-control-sm" />
+                <input type="text" id="mipr" name="mipr" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese la cantidad:</label><br>
                 <input type="text" id="mc" name="mc" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la unidad:</p>
-                <input type="text" id="mipr" name="mu" class="form-control form-control-sm" />
+                <input type="text" id="mu" name="mu" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la fecha</p>
                 <input type="text" id="mf" name="mf" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese el costo unitario:</p>
-                <input type="text" id="mipr" name="mcu" class="form-control form-control-sm" />
+                <input type="text" id="mcu" name="mcu" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la descripcion</p>
                 <input type="text" id="md" name="md" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese tipo de merma</p>

@@ -44,12 +44,8 @@
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="devoluciones" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Devoluciones</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="dev">
+                    <li class="nav-item">
                             <a class="nav-link text-white" href="InventarioDevoluciones.jsp">Devoluciones</a>
-                            <a class="nav-link text-white" href="InventarioDevAgregar.jsp">Agregar&nbsp;Devolucion</a>                                    
-                        </div>
                     </li>                            
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
@@ -73,19 +69,14 @@
                 <label class="card-text">Buscar id de compra</label><br>
                 <input type="text" id="bic" name="bic" class="form-control form-control-sm" />
                 <input id="boic" type="submit" value="Buscar" class="btn btn-success"/><br><br>
-                <p class="card-text">Eliminar producto de devolucion</p>
-                <input type="text" id="epd" name="epd" class="form-control form-control-sm" />
-                <input id="bopd" type="submit" value="Eliminar" class="btn btn-success"/><br><br>
                 <p class="card-text">Reporte</p>
                 <input id="bor" type="submit" value="Generar" class="btn btn-success"/>
-                <p class="card-text">Registro de producto rechazado</p>
-                <input id="borpe" type="submit" value="Agregar producto" class="btn btn-success"/>
             </div>
         </div>
     </div>
     <!--/.Panel-->
     <!--Panel-->
-   <div class="col-sm-9">
+   <div class="col-sm-8">
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">Devoluciones</h3>
@@ -97,7 +88,6 @@
                                 <th>ID compra</th>
                                 <th>ID producto</th>
                                 <th>Nombre</th>
-                                <th>tipo</th>
                                 <th>Cantidad devuelta</th>
                                 <th>Fecha devolucion</th>
                                 <th>Motivo</th>
@@ -108,7 +98,6 @@
                                 <td>15</td>
                                 <td>Ropa</td>
                                 <td>Puma</td>                   
-                                <td>5</td>
                                 <td>04/10/2018</td>
                                 <td>El usuario no le gusto la talla que encargo</td>
                             </tr>
@@ -117,7 +106,6 @@
                                 <td>40</td>                   
                                 <td>1</td>
                                 <td>Martillo</td>
-                                <td>Herramienta</td>
                                 <td>150</td>
                                 <td>04/10/2018</td>
                                 <td>El martillo tenia roto el empaque</td>
