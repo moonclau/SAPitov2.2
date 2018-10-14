@@ -5,42 +5,33 @@
  */
 package com.sap.inventario.clases;
 
+
 /**
  *
  * @author claudia
  */
 public class Merma {
-    String clave;
+    String clavemerma;
     String clavep;
-    String nombrep;
-    String clavepv;
     int cantidad;
     String fecha;
     String descripcion;
+    String tipoMerma;
 
-    public String getClavepv() {
-        return clavepv;
+    public String getClavemerma() {
+        return clavemerma;
     }
 
-    public void setClavepv(String clavepv) {
-        this.clavepv = clavepv;
-    }
-    String tipom;
-
-    public String getTipom() {
-        return tipom;
+    public String getTipoMerma() {
+        return tipoMerma;
     }
 
-    public void setTipom(String tipom) {
-        this.tipom = tipom;
+    public void setTipoMerma(String tipoMerma) {
+        this.tipoMerma = tipoMerma;
     }
 
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setClavemerma(String clavemerma) {
+        this.clavemerma = clavemerma;
     }
 
     public String getClavep() {
@@ -51,14 +42,6 @@ public class Merma {
         this.clavep = clavep;
     }
 
-    public String getNombrep() {
-        return nombrep;
-    }
-
-    public void setNombrep(String nombrep) {
-        this.nombrep = nombrep;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
@@ -66,6 +49,7 @@ public class Merma {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
 
     public String getFecha() {
         return fecha;
@@ -82,6 +66,6 @@ public class Merma {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    
     
 }
