@@ -5,8 +5,7 @@
  */
 package com.sap.inventario.clases;
 
-
-/**
+    /**
  *
  * @author claudia
  */
@@ -69,3 +68,4 @@ public class Merma {
     
     
 }
+

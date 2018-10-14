@@ -4,6 +4,9 @@
     Author     : montse
 --%>
 
+<%@page import="com.sap.inventario.clases.Producto"%>
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,7 +23,7 @@
 </head>
 <body><header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href=" " class="navbar-brand text-white">Inventario</a>
+            <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -66,18 +69,19 @@
             <div class="card-body">
                 <h4>Consulta</h4>
                  <div class="col-xs-offset-1 col-md-offset-1 central">
-                  <form>
-                  <h5>Buscar ID Compra</h5>
-                  </form>
+                  
                 </div>
                     <div class="col-xs-10 col-md-10 central">
                     <form action="" method="post">
-                    <input name="clave" type="text" placeholder="ID Compra"/> 
-                    <input type="submit" value="Buscar"/>
+                        <h5>Buscar ID de producto</h5>
+                        <input name="clave" type="text" placeholder="ID producto"/><br><br> 
+                        
+                            <hr>
+                     <a href="InventarioProductoAgregar.jsp"><label>Agregar producto</label></a>
+                     <a href="InventarioProductoModificar.jsp"><label>Modificar producto</label></a>
                     <h4>Reporte</h4>
-                    <div class="col-xs-offset-0 col-md-offset-0 central">
-                    <input type="submit" value="Generar"/>
-                    </div>  
+                    <input type="submit" value="Generar"/><br>  
+                     
                 </form>
               </div>
             </div>
@@ -102,56 +106,42 @@
         </th>
       
         <th>
-          Costo unitario
+          tipo
         </th>
         <th>
           Unidad
         </th>
         <th>
-          Tipo
+          Cantidad
         </th>
       
         <th>
+          Costo unitario
+        </th>
+        <th>
           Costo de venta
         </th>
-        <th>
-          iva
-        </th>
         
         <th>
-          fecha de entrada 
-        </th>
-        <th>
-          fecha de salida
+          iva 
         </th>
       </tr>
-
-
-      <tr>
-        <td>12345</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-
-      </tr>
-      <tr>
-        <td>87653</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-      </tr>
+      <%
+                        LinkedList<Producto> lista =Consultas.consultaProducto();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
+                           out.println("<td>"+lista.get(i).getNombre()+"</td>");
+                           out.println("<td>"+lista.get(i).getTipo()+"</td>");
+                           out.println("<td>"+lista.get(i).getUnidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostototal()+"</td>");
+                           out.println("<td>"+lista.get(i).getIva()+"</td>");
+                           out.println("</tr>");
+                        }
+                    %>
     </table>
        </div>
         </div>

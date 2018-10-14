@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Inventario
-    Created on : 25/09/2018, 07:40:46 PM
-    Author     : fgb
+    Document   : InventarioHacerPedido
+    Created on : 14/10/2018, 06:05:53 AM
+    Author     : claudia
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,8 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inventario</title>
-    <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <title>Hacer Pedido</title>
+    <!-- Bootstrap -->
+<link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
@@ -49,7 +50,7 @@
                             <a class="nav-link text-white" href="InventarioProductoAgregar.jsp">Agregar&nbsp;Producto</a>
                             <a class="nav-link text-white" href="InventarioProductoModificar.jsp">Modificar&nbsp;Producto</a>                                  
                         </div>
-                    </li>          
+                    </li>                            
                 </ul>   
                <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
@@ -58,6 +59,32 @@
         </nav>
     </header>      
     <br/><br/>
-        <h1>Bienvenido a inventarios</h1>
+    <!---------------------------------------------------------------fin de barra meni-->
+    <!--Panel---------------------------------------------------------------------------------->
+    <div class="row">
+    <!--Panel-->
+    <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
+        <div class="card" text-center>
+            <div class="card-body">
+                
+                        <form  action="../ModificarProducto" method="post">
+                <h3 class="card-title" >Hacer Pedido del Producto </h3><br><br>
+                <!--INICIO CUESTIONARIO-->
+                <label class="card-text">Ingrese clave de producto:</label><br>
+                <input type="text" id="clave" name="clave" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese el costo unitario:</p>
+                <input type="number" id="costounitario" name="costounitario" class="form-control form-control-sm" required="required"/>
+                <p class="card-text">Ingrese la cantidad a pedir</p>
+                <input type="number" id="cantidad" name="cantidad" step="0.01" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese la fecha</p>
+                <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese el iva:</p>
+                <input type="number" id="iva" name="iva" class="form-control form-control-sm" required="required"/>
+                <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
+                        </form>
+            </div>
+        </div>
+    </div>
+    <!--/.Panel-->
     </body>
 </html>

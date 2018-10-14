@@ -4,6 +4,10 @@
     Author     : claudia
 --%>
 
+<%@page import="com.sap.inventario.clases.Producto"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
+<%@page import="java.util.LinkedList"%>
+<%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,7 +24,7 @@
 </head>
 <body><header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href=" " class="navbar-brand text-white">Inventario</a>
+            <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -65,18 +69,18 @@
         <div class="card" text-center>
             <div class="card-body">
                 <h4>Consulta</h4>
-                 <div class="col-xs-offset-1 col-md-offset-1 central">
-                  <form>
-                  <h5>Buscar ID Compra</h5>
-                  </form>
-                </div>
+                 
                     <div class="col-xs-10 col-md-10 central">
                     <form action="" method="post">
+                        <h5>Buscar ID producto</h5>
                     <input name="clave" type="text" placeholder="ID Compra"/> 
                     <input type="submit" value="Buscar"/>
                     <h4>Reporte</h4>
-                    <div class="col-xs-offset-0 col-md-offset-0 central">
                     <input type="submit" value="Generar"/>
+                    <hr>
+                    <a href="InventarioHacerPedido.jsp"><label>Ingresar entrada de producto</label></a>
+                    <div class="col-xs-offset-0 col-md-offset-0 central">
+                    
                     </div>  
                 </form>
               </div>
@@ -88,70 +92,51 @@
             <div class="card-body">
       <div class="col-xs-offset-6 col-md-offset-6 central">
               <div class="container">
-                <h4>Productos</h4>
+                <h4>Productos Comprados</h4>
               </div>
             </div>
     <table class="table-striped table table-bordered table-hover">
       <tr>
         <th>
-          ID Compra
+          Clave Producto
         </th>
       
         <th>
-          ID Producto
-        </th>
-      
-        <th>
-          Nombre Producto
-        </th>
-      
-        <th>
-          Tipo
-        </th>
-      
-        <th>
-          Proveedor
-        </th>
-        <th>
+          Nombre
+        </th><th>
           Cantidad
         </th>
-        <th>
-          Unidad
+      <th>
+         Costo unitario
+        </th><th>
+          iva
+        </th><th>
+          Costo venta
+        </th>
+      <th>
+          Monto total
         </th>
         <th>
-          Costo Unitario
-        </th>
-        <th>
-          Lote
+          Fecha
         </th>
       </tr>
 
-
-      <tr>
-        <td>12345</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-
-      </tr>
-      <tr>
-        <td>87653</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-      </tr>
+      <%
+                        LinkedList<Producto> lista =Consultas.consultaEntradas();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
+                           out.println("<td>"+lista.get(i).getNombre()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
+                           out.println("<td>"+lista.get(i).getIva()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostototal()+"</td>");
+                           out.println("<td>"+lista.get(i).getMontototal()+"</td>");
+                           out.println("<td>"+lista.get(i).getFecha()+"</td>");
+                           out.println("</tr>");
+                        }
+                    %>
     </table>
        </div>
         </div>

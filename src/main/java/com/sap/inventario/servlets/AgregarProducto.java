@@ -47,8 +47,11 @@ public class AgregarProducto extends HttpServlet {
         String iva = request.getParameter("iva");
         String fecha= request.getParameter("fecha");
         String costov=request.getParameter("costov");
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion,costo,montototal", "producto",
-                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','exitente',"+costov);
+        double vcosto=Double.parseDouble(costounitario);
+        double viva=Double.parseDouble(iva);
+        double monto=(vcosto*viva)+vcosto;
+         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion,costo,monto_total", "producto",
+                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','exitente',"+costov+","+monto);
          response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
     }
 
