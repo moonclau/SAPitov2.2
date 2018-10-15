@@ -1,26 +1,22 @@
 <%-- 
-    Document   : Compras
-    Created on : 25/09/2018, 07:40:03 PM
-    Author     : Marifer y Erick
+    Document   : List_com
+    Created on : 2/10/2018, 08:17:58 AM
+    Author     : Marii y Erick
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-       <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-        <link href="../CSS/estilos.css" rel="stylesheet">
+       <link href="../CSS/estilos.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/validaciones.js"></script>
-   
         <link href="../Recursos/bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script src="../Recursos/bootstrap/js/bootstrap.js"></script>
         
-       
         <title>Compras</title>
         
     </head>
@@ -31,8 +27,8 @@
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
                 <div>
-                    <a class="navbar-brand" style="color: white" >Compras</a>  
-                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand" style="color: white" >Compras</a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,9 +67,9 @@
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
-                        <form method="POST" >
+                        <form method="POST" accion="List_com.jsp" >
                             <center><div id="titulo" class="col-12">
-                                <h3>Buscar&nbsp;Proveedor</h3>
+                                <h3>Buscar&nbsp;Compra</h3>
                                 </div></center>
                            <br>
                            <div class="radio">
@@ -85,10 +81,22 @@
                            <div class="radio">
                             <label>
                                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Por&nbsp;Clave
+                                    Por&nbsp;Folio
                             </label>
-                           </div><br>
-                           <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required></center>
+                           </div>
+                           <br>
+                           <center><input type="number" name="folio" placeholder="Folio" class="form-control" id="codprod" required></center>
+                            <div>
+                                <br>
+                            </div>
+                            <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    Por&nbsp;Fecha
+                            </label>
+                           </div>
+                           <br>
+                           <center><input type="date" name="folio" placeholder="Fecha" class="form-control" id="codprod" required></center>
                             <div>
                                 <br>
                             </div>
@@ -96,21 +104,17 @@
                             <br>
                         </form>
 
-                        <form method="POST" action="Nuevo_prod.jsp"  >
+                        <form method="POST" action="Nuevo_com.jsp"  >
                             <div>
                             <br>
                             </div>
                             <center><div id="titulo" class="col-12">
-                                <h3>Proveedor</h3>
+                                <h3>Compra</h3>
                                 </div></center><br>
                             <center><input type="submit" value="Agregar"  name="nuevo" class="btn btn-success"></center>      
                              </form><div><br></div>
-                            <form method="POST" action="Eli_prod.jsp" >                                
+                            <form method="POST" action="Eli_com.jsp" >                                
                             <center><input type="submit" value="Eliminar"  name="eliminar" class="btn btn-success"></center>      
-                        </form>
-                        <br>
-                        <form method="POST" action="Edit_prod.jsp" >                                
-                            <center><input type="submit" value="Editar"  name="editar" class="btn btn-success"></center>      
                         </form>
                         <br>
                     </div>   
@@ -118,113 +122,82 @@
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
                         
                             <center><div>
-                                    <h3>Proveedores</h3>
+                                    <h3>Compras</h3>
                             </div></center>
                          <div class="table-responsive"><table class="table table-bordered">
                                     <thead>
-    <tr class="active">
-        <th scope="col"><center>Clave</center></th>
-      <th scope="col"><center>Razon social</center></th>
-      <th scope="col"><center>RFC</center></th>      
-       <th scope="col"><center>Direccion</center></th>
-       <th scope="col"><center>Telefono</center></th>
-       <th scope="col"><center>Correo</center></th>
-       <th scope="col"><center>Cuenta contable</center></th>
-       <th scope="col"><center>Credito</center></th>
-       <th scope="col"><center>Días Crédito</center></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr id="modalInter">
-      <th scope="row">1</th>
-      <td>Dogger tools</td>
-     <td>FGDHSDJH78634CR0LR</td>    
-     <td>col. margaritas </td>
-     <td>7223456712</td>
-     <td>doggertools@gmsil.com</td>
-     <td>10.11</td>
-     <td>$50,000</td>
-     <td>12</td>
-    </tr>
-    <tr id="modalInter">
-      <th scope="row">2</th>
-       <td>Ronal mexicana</td>
-        <td>FGDHSDJH78634CRLR</td>       
-          <td>col. margaritas</td>
-     <td>7223456712</td>
-     <td>Ronalmexicana@hotmail.com</td>
-      <td>10.11</td>
-      <td>$50,000</td>
-      <td>30</td>
-    </tr>
-    <tr id="modalInter">
-      <th scope="row">3</th>
-       <td>Norkcon tools </td>
-        <td>FGDHSDJH78634CRLR</td>
-          <td>col. margaritas</td>
-           <td>7223456712</td>
-           <td>norkcontools@gmail.com</td>
-            <td>10.11</td>
-             <td>$50,000</td>
-            <td>20</td>
-    </tr>
-  </tbody>
+                                        <tr class="active">
+                                            <th scope="col">Detalle</th>
+                                            <th scope="col">Folio</th>
+                                            <th scope="col">Fecha</th>                                            
+                                            <th scope="col">Proveedor</th>
+                                            <th scope="col">Pago</th>
+                                        </tr>
+                                    </thead>                                    
+                                    <tbody>                                       
+                                        <tr id="modalInter">
+                                        <td><div class="checkbox">
+                                                <label>
+                                        <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                </label>
+                                        </div></td>
+                                        <td scope="col">0001</td>
+                                        <td scope="col">10/09/2017</td>
+                                            <td scope="col">José</td>
+                                            <td scope="col">$280.00</td>
+                                        </tr>  
+                                        <tr id="modalInter">
+                                        <td><div class="checkbox">                                   
+                                         <label>
+                                        <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                        </label>                                 
+                                        </div></td>
+                                        <td scope="col">0002</td>
+                                         <td scope="col">20/03/2017</td>
+                                            <td scope="col">Luis</td>
+                                            <td scope="col">$15000.00</td>
+                                        </tr>  
+                                    </tbody>
                                 </table></div>
                         <br>
+                        <form method="POST" action="" >                                
+                         <center><input type="submit" value="Ver Compra"  name="ver" class="btn btn-success"></center>      
+                         </form>
                         
-                           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                           <div class="container">
+                        <form action="" method="post" onsubmit="return agr_prov();">                
+                           <div>
                                     <h5>Solo mostrar:</h5>
                             <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1">
-                                    RFC
+                                    Folio
                             </label>
                            </div>
                            <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Razón Social
+                                    Proveedor 
                             </label>
                            </div>
                            <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Dirección 
+                                   Precio Venta
                             </label>
                            </div>
-                           <div class="checkbox">
+                                    <div class="checkbox">
                             <label>
                                 <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Correo
+                                   Fecha
                             </label>
                            </div>
-                           <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Teléfono
-                            </label>
-                               </div>
-                            <div class="checkbox">
-                               <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Crédito
-                            </label>
-                           </div>
-                             <div class="checkbox">
-                               <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Cuenta contable
-                            </label>
-                           </div>
-                             <div class="checkbox">
-                               <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Días Crédito
-                            </label>
-                           </div> 
-
-               <center><input type="submit" value="Filtrar" style="background-color:#3366FF" name="filtro" class="btn btn-primary" onsubmit="return compras();"></center>
+                          <br> 
+                          
+                          <div><input type="submit" value="Filtrar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></div>
                             </div>
+                        </form>
+                    </div>
                     </div>
                 </div>
             </div>            

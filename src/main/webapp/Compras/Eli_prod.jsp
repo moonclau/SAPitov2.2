@@ -1,26 +1,22 @@
 <%-- 
-    Document   : Compras
-    Created on : 25/09/2018, 07:40:03 PM
-    Author     : Marifer y Erick
+    Document   : Eli_prod
+    Created on : 1/10/2018, 11:23:10 PM
+    Author     : Marii y Erick
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-       <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-        <link href="../CSS/estilos.css" rel="stylesheet">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+       <link href="../CSS/estilos.css" rel="stylesheet">
         <script src="../JS/validaciones.js"></script>
-   
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../Recursos/bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script src="../Recursos/bootstrap/js/bootstrap.js"></script>
-        
-       
         <title>Compras</title>
         
     </head>
@@ -31,8 +27,8 @@
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
                 <div>
-                    <a class="navbar-brand" style="color: white" >Compras</a>  
-                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand" style="color: white" >Compras</a> 
+                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -96,7 +92,7 @@
                             <br>
                         </form>
 
-                        <form method="POST" action="Nuevo_prod.jsp"  >
+                        <form method="POST" action="Nuevo_prod.jsp" >
                             <div>
                             <br>
                             </div>
@@ -104,11 +100,11 @@
                                 <h3>Proveedor</h3>
                                 </div></center><br>
                             <center><input type="submit" value="Agregar"  name="nuevo" class="btn btn-success"></center>      
-                             </form><div><br></div>
+                            </form><div><br></div>
                             <form method="POST" action="Eli_prod.jsp" >                                
-                            <center><input type="submit" value="Eliminar"  name="eliminar" class="btn btn-success"></center>      
+                            <center><input type="submit" value="Eliminar"  name="eliminar" class="btn btn-success"></center>                              
                         </form>
-                        <br>
+                            <br>
                         <form method="POST" action="Edit_prod.jsp" >                                
                             <center><input type="submit" value="Editar"  name="editar" class="btn btn-success"></center>      
                         </form>
@@ -118,11 +114,27 @@
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
                         
                             <center><div>
-                                    <h3>Proveedores</h3>
-                            </div></center>
-                         <div class="table-responsive"><table class="table table-bordered">
+                                    <h3>Eliminar Proveedor</h3>
+                            </div></center>                       
+                        <br>
+                        
+                           <div class="row">
+                               <div class="col-xs-4"></div>
+                               <div class="col-xs-3">
+                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
+                           </div> 
+                           <div class="col-xs-1">
+                        <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
+                               </div>
+                               
+                                
+                            </div>
+                               
+                               <div><br><br></div>
+                        
+                        <center><div class="table-responsive " ><table class="table table-bordered">
                                     <thead>
-    <tr class="active">
+    <tr >
         <th scope="col"><center>Clave</center></th>
       <th scope="col"><center>Razon social</center></th>
       <th scope="col"><center>RFC</center></th>      
@@ -135,7 +147,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr id="modalInter">
+    <tr>
       <th scope="row">1</th>
       <td>Dogger tools</td>
      <td>FGDHSDJH78634CR0LR</td>    
@@ -145,86 +157,12 @@
      <td>10.11</td>
      <td>$50,000</td>
      <td>12</td>
-    </tr>
-    <tr id="modalInter">
-      <th scope="row">2</th>
-       <td>Ronal mexicana</td>
-        <td>FGDHSDJH78634CRLR</td>       
-          <td>col. margaritas</td>
-     <td>7223456712</td>
-     <td>Ronalmexicana@hotmail.com</td>
-      <td>10.11</td>
-      <td>$50,000</td>
-      <td>30</td>
-    </tr>
-    <tr id="modalInter">
-      <th scope="row">3</th>
-       <td>Norkcon tools </td>
-        <td>FGDHSDJH78634CRLR</td>
-          <td>col. margaritas</td>
-           <td>7223456712</td>
-           <td>norkcontools@gmail.com</td>
-            <td>10.11</td>
-             <td>$50,000</td>
-            <td>20</td>
-    </tr>
+    </tr>  
   </tbody>
-                                </table></div>
+                                </table></div></center>                      
+                              
                         <br>
-                        
-                           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                    <h5>Solo mostrar:</h5>
-                            <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1">
-                                    RFC
-                            </label>
-                           </div>
-                           <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Razón Social
-                            </label>
-                           </div>
-                           <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Dirección 
-                            </label>
-                           </div>
-                           <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Correo
-                            </label>
-                           </div>
-                           <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Teléfono
-                            </label>
-                               </div>
-                            <div class="checkbox">
-                               <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Crédito
-                            </label>
-                           </div>
-                             <div class="checkbox">
-                               <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Cuenta contable
-                            </label>
-                           </div>
-                             <div class="checkbox">
-                               <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
-                                   Días Crédito
-                            </label>
-                           </div> 
-
-               <center><input type="submit" value="Filtrar" style="background-color:#3366FF" name="filtro" class="btn btn-primary" onsubmit="return compras();"></center>
-                            </div>
+                        <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
                     </div>
                 </div>
             </div>            

@@ -26,9 +26,13 @@
             </button>
             <div class="collapse navbar-collapse" id="int_navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="InventarioGeneral.jsp" class="nav-link text-white">Inventario&nbsp;General</a>
-                    </li>                   
+                    <li class="nav-item dropdown">
+                        <a href="#InventarioProducto.jsp" class="nav-link dropdown-toggle text-white" id="producto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">General</a>
+                        <div class="dropdown-menu bg-primary" aria-labelledby="inventario">
+                            <a class="nav-link text-white" href="InventarioProducto.jsp">Producto</a>
+                            <a class="nav-link text-white" href="InventarioProductoAgregar.jsp">Agregar&nbsp;Producto</a>
+                            <a class="nav-link text-white" href="InventarioProductoModificar.jsp">Modificar&nbsp;Producto</a>                                  
+                        </div>                  
                     <li class="nav-item">
                         <a href="InventarioEntradas.jsp" class="nav-link text-white">Inventario&nbsp;Entradas</a>
                     </li>    
@@ -41,14 +45,6 @@
                             <a class="nav-link text-white" href="InventarioMerma.jsp">Merma</a>
                             <a class="nav-link text-white" href="InventarioMermaAgregar.jsp">Agregar&nbsp;Merma</a>
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#InventarioProducto.jsp" class="nav-link dropdown-toggle text-white" id="producto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Producto</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="inventario">
-                            <a class="nav-link text-white" href="InventarioProducto.jsp">Producto</a>
-                            <a class="nav-link text-white" href="InventarioProductoAgregar.jsp">Agregar&nbsp;Producto</a>
-                            <a class="nav-link text-white" href="InventarioProductoModificar.jsp">Modificar&nbsp;Producto</a>                                  
                         </div>
                     </li>                            
                 </ul>   
@@ -72,14 +68,14 @@
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese clave de producto:</label><br>
                 <input type="text" id="clave" name="clave" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el costo unitario:</p>
+                <p class="card-text">Ingrese el costo:</p>
                 <input type="number" id="costounitario" name="costounitario" class="form-control form-control-sm" required="required"/>
                 <p class="card-text">Ingrese la cantidad a pedir</p>
                 <input type="number" id="cantidad" name="cantidad" step="0.01" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la fecha</p>
+                <p class="card-text">Ingrese la fecha de hoy</p>
                 <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el iva:</p>
-                <input type="number" id="iva" name="iva" class="form-control form-control-sm" required="required"/>
+                <p class="card-text">Ingrese la fecha en la que se requiere el producto:</p>
+                <input type="date" id="fechae" name="fechae" class="form-control form-control-sm" required="required"/>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
                         </form>
             </div>

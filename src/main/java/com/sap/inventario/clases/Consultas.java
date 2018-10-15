@@ -34,12 +34,35 @@ public class Consultas {
             p.setNombre(rs.getString("nombre"));
             p.setTipo(rs.getString("tipo"));
             p.setUnidad(rs.getString("unidad"));
-            p.setCantidad(rs.getInt("cantidad"));
+            p.setCantidad(rs.getInt("existencia"));
             p.setCostounitario(rs.getDouble("costounitario"));
             p.setCostototal(rs.getDouble("costo"));
             p.setIva(rs.getDouble("iva"));
             p.setFecha(rs.getString("fecha"));
-            p.setOperacion(rs.getString("operacion"));
+            p.setMontototal(rs.getDouble("monto_total"));
+            l.add(p);
+        }
+        conn.close();
+        return l;
+    }  
+    public static LinkedList consultaSalidas() throws SQLException,ClassNotFoundException{
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+        LinkedList <Producto> l=new LinkedList<Producto>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("select * from producto where operacion='salida'");
+        while (rs.next()) {
+            Producto p=new Producto();
+            p.setClave(rs.getString("clave"));
+           p.setCostounitario(rs.getDouble("costounitario"));
+            p.setCostototal(rs.getDouble("costo"));
+            p.setIva(rs.getDouble("iva"));
+            p.setFecha(rs.getString("fecha"));
             p.setMontototal(rs.getDouble("monto_total"));
             l.add(p);
         }
@@ -56,33 +79,7 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from producto where operacion='Entrada'");
-        while (rs.next()) {
-            Producto p=new Producto();
-            p.setClave(rs.getString("clave"));
-            p.setNombre(rs.getString("nombre"));
-            p.setCantidad(rs.getInt("cantidad"));
-            p.setCostounitario(rs.getDouble("costounitario"));
-            p.setCostototal(rs.getDouble("costo"));
-            p.setIva(rs.getDouble("iva"));
-            p.setFecha(rs.getString("fecha"));
-            p.setMontototal(rs.getDouble("monto_total"));
-            l.add(p);
-        }
-        conn.close();
-        return l;
-    }
-    public static LinkedList consultaSalidas() throws SQLException,ClassNotFoundException{
-        Connection conn;
-        Class.forName("org.postgresql.Driver");
-        LinkedList <Producto> l=new LinkedList<Producto>();
-        Properties connProp = new Properties();
-        connProp.put("user", "postgres");
-        connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
-        Statement stmt;        
-        stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from producto where operacion='salida'");
+        ResultSet rs = stmt.executeQuery("select * from producto");
         while (rs.next()) {
             Producto p=new Producto();
             p.setClave(rs.getString("clave"));
@@ -101,14 +98,14 @@ public class Consultas {
     public static LinkedList consultaMerma() throws SQLException,ClassNotFoundException{
         Connection conn;
         Class.forName("org.postgresql.Driver");
-        LinkedList <Merma> l=new LinkedList<Merma>();
+         LinkedList <Merma> l=new LinkedList<Merma>();
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from merma");
+         ResultSet rs = stmt.executeQuery("select * from merma");
         while (rs.next()) {
             Merma p=new Merma();
             p.setClavemerma(rs.getString("clave_merma"));
@@ -122,4 +119,5 @@ public class Consultas {
         conn.close();
         return l;
     }
-}
+    }
+    
