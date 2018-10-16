@@ -8,13 +8,7 @@
 <%@page import="com.sap.inventario.clases.Merma"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Inventario Merma</title>
-<!-- Bootstrap -->
+
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -61,6 +55,25 @@
     </header>      
     <br/><br/>
     <!--/.Panel-->
+    <div class="row">
+    <div class="col-sm-3 ">
+        <div class="card" text-center>
+            <div class="card-body">
+                <label class="card-text">Buscar id de merma</label><br>
+                <input type="text" id="bmerma" name="bmerma" class="form-control form-control-sm" />
+                <input id="bomerma" type="submit" value="Buscar" class="btn btn-success"/><br><br>
+                <p class="card-text">Eliminar producto de merma</p>
+                <input type="text" id="emerma" name="emerma" class="form-control form-control-sm" />
+                <input id="boemerma" type="submit" value="Eliminar" class="btn btn-success"/><br><br>
+                <p class="card-text">Nuevo producto de merma</p>
+                <input id="boamerma" type="submit" value="Agregar" class="btn btn-success"/><br><br>
+                <p class="card-text">Modificar producto de merma</p>
+                <input id="bommerma" type="submit" value="Modificar" class="btn btn-success"/><br><br>
+                <p class="card-text">Reporte</p>
+                <input id="bogmerma" type="submit" value="Generar" class="btn btn-success"/>
+            </div>
+        </div>
+    </div>
     <!--Panel-->
     <div class="col-sm-9">
         <div class="card">
@@ -96,6 +109,7 @@
                 <!--FIN TABLA MN-->
             </div>
         </div>
+    </div>
     </div>
     <!--/.Panel-->
 </div>
