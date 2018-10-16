@@ -135,7 +135,7 @@ and open the template in the editor.
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div style="background-color: #fff; margin: 20px 2px;">
-                            <a href="#">
+                            <a href="../Ventas/Ventas.jsp">
                                 <h1 style="color: black; margin-left: 20px;">Ventas</h1>
                                 <div class="row justify-content-center" style="margin-left: 20px; margin-right: 20px;">                               
                                     <canvas id="gVentas" width="100%"></canvas>
