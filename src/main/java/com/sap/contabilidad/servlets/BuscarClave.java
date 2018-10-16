@@ -43,7 +43,7 @@ public class BuscarClave extends HttpServlet {
         usuario usu = new usuario();
         String campos="clave,periodo,fechaini,fechafin,estatus";
         ArrayList l=c.consultaVariosCamposUnaClave(cadena, campos,"calen_contable", 5);
-        int i = c.insercionRegistro(usu.getId_emp(),  "contabilidad", "Consulta clave");
+        int i = c.insercionRegistro(1,  "contabilidad", "Consulta clave");
         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */                  

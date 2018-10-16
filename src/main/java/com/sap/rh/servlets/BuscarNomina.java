@@ -46,7 +46,7 @@ public class BuscarNomina extends HttpServlet {
                     "nomina", "id is not null", 10);
         }
         
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Busqueda de nomina");
+        int i = c.insercionRegistro(1,  "rh", "Busqueda de nomina");
         
         request.getSession().setAttribute("nomina", lista);
         response.sendRedirect("RH/BuscarResultado.jsp");
