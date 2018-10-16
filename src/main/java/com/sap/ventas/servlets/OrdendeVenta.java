@@ -48,7 +48,7 @@ public class OrdendeVenta extends HttpServlet {
        
         Conexion c = new Conexion();
         
-        c.insertar("clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,precio_unitario,precio_total,idpedido,","cliente","'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+preciounitario+","+preciototal+","+idPOV+"");
+        c.insertar("clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,precio_unitario,precio_total,idpedido,","orden_de_venta","'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+preciounitario+","+preciototal+","+idPOV+"");
        
          response.sendRedirect("Ventas/Orden de Venta.jsp");
     }
