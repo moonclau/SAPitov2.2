@@ -10,9 +10,11 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+        <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../Recursos/Bootstrap/librerias/popper.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
         <script src="../Gerencia/validaciones/validacion.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
     </head>
@@ -28,7 +30,7 @@ and open the template in the editor.
                     <ul class="navbar-nav mr-auto">                    
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" id="conf" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
-                            <div class="dropdown-menu bg-primary" aria-labelledby="conf">
+                            <div class="dropdown-menu bg-primary" aria-labelledby="conf" >
                                 <form  onsubmit="return validawebservice('nombre', 'ip', 'puerto');" action="" name="ws" method="post" autocomplete="off">
                                     <br>
                                     <label>Nombre&nbsp;del&nbsp;servicio
@@ -68,9 +70,9 @@ and open the template in the editor.
                                     <br>
                                     <label>Intervalo&nbsp;de&nbsp;tiempo</label>
                                     <div id="hora">
-                                        <label>De: <input id="horaInicio" for="example-time-input" type="time" name="horaInicio" max="22:30:00" min="10:00:00" class="form-control"></label>
+                                        <label>De: <input id="horaInicio" for="example-time-input" type="time" name="horaInicio"  class="form-control"></label>
                                         <br>
-                                        <label>A:   <input id="horaFin" for="example-time-input" type="time" name="horaFin" max="22:30:00" min="10:00:00"  class="form-control"></label>  
+                                        <label>A:   <input id="horaFin" for="example-time-input" type="time" name="horaFin"  class="form-control"></label>  
                                     </div>
                                     <br>
                                     <input type="submit" class="btn btn-danger text-white" value="Generar">
