@@ -108,7 +108,7 @@ and open the template in the editor.
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div style="background-color: #fff; margin: 20px 2px;">
-                            <a href="../RecursosHumanos/rh_index.jsp">
+                            <a href="../RH/rh_index.jsp">
                                 <h1 style="color: black; margin-left: 20px;">Recursos Humanos</h1>
                                 <div class="row justify-content-center" style="margin-left: 20px; margin-right: 20px;">
                                     <canvas id="gRH" width="100%" height="80px"></canvas>
