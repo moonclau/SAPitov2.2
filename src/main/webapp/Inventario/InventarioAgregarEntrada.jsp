@@ -78,7 +78,7 @@
                 <label class="card-text">Ingrese el iva</label>
                 <input type="number" id="iva" step="0.01" name="iva" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese el  costo de venta</label>
-                <input type="number" id="iva"  name="iva" class="form-control form-control-sm" />
+                <input type="number" id="costov"  name="costov" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la fecha :</p>
                 <input type="date" id="fechae" name="fechae" class="form-control form-control-sm" required="required"/>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>

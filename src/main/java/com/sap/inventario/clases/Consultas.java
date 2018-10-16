@@ -79,12 +79,12 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from producto");
+        ResultSet rs = stmt.executeQuery("select * from producto where operacion='entrada'");
         while (rs.next()) {
             Producto p=new Producto();
             p.setClave(rs.getString("clave"));
             p.setNombre(rs.getString("nombre"));
-            p.setCantidad(rs.getInt("cantidad"));
+            p.setCantidad(rs.getInt("existencia"));
             p.setCostounitario(rs.getDouble("costounitario"));
             p.setCostototal(rs.getDouble("costo"));
             p.setIva(rs.getDouble("iva"));
@@ -118,6 +118,30 @@ public class Consultas {
         }
         conn.close();
         return l;
+    
     }
-    }
+//    public static LinkedList consultaSalidaOp() throws SQLException,ClassNotFoundException{
+//       
+//       Connection conn;
+//        Class.forName("org.postgresql.Driver");
+//        LinkedList <VarSal> l=new LinkedList<VarSal>();
+//        Properties connProp = new Properties();
+//        connProp.put("user", "postgres");
+//        connProp.put("password", "root");
+//        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+//        Statement stmt;        
+//        stmt = conn.createStatement();
+//        PedidoInventario pi=new PedidoInventario();
+//        ResultSet res = stmt.executeQuery("select o.cantidad,p.existencia from orden_de_venta as o, producto as p where p.id=(select idproducto from pedido where idpedido="+pi.getIdpedido()+") and o.idpedido="+pi.getIdpedido());
+////        while (rs.next()) {
+//            
+//        VarSal p=new VarSal();
+//            p.setCantidad(res.getInt("o.cantidad"));
+//            p.setExistencia(res.getInt("p.existencia"));
+//            l.add(p);
+//        
+//        conn.close();
+//        return l;
+//    }
+}
     
