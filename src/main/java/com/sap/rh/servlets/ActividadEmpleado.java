@@ -43,11 +43,11 @@ public class ActividadEmpleado extends HttpServlet {
             
             
             if(!lista.isEmpty()){
-                int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Actividad del empleado");
+                int i = c.insercionRegistro(1,  "rh", "Actividad del empleado");
                 c.actualizar("actividad = '" + actividad + "'", "empleado", "id = " + empleado);
                 response.sendRedirect("RH/ActividadEmpleado.jsp");
             }else{
-                int i = c.insercionRegistro(usu.getId_emp(),  "rh", "No encuentra actividad del empleado");
+                int i = c.insercionRegistro(1,  "rh", "No encuentra actividad del empleado");
                 request.getSession().setAttribute("motivo", "El empleado no existe");
                 response.sendRedirect("RH/Error.jsp");
             }

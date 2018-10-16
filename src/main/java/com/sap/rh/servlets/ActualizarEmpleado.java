@@ -55,7 +55,7 @@ public class ActualizarEmpleado extends HttpServlet {
                 "',area = "+area+",puesto = "+puesto+",horario = '"+horario+"',sueldo = "+sueldo+",cuenta = '"+cuenta+"'"
                 , "empleado", "id = "+empleado);
         
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Actualizacion del empleado");
+        int i = c.insercionRegistro(1,  "rh", "Actualizacion del empleado");
         
         response.sendRedirect("RH/ModificarEmpleado.jsp");
     }

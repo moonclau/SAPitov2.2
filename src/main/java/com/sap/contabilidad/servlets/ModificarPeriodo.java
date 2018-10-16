@@ -49,7 +49,7 @@ public class ModificarPeriodo extends HttpServlet {
         request.getSession().setAttribute("fechafin", l.get(3));
         request.getSession().setAttribute("estatus", l.get(4));
         
-        int i = c.insercionRegistro(usu.getId_emp(), "contabilidad", "Elimino periodo");
+        int i = c.insercionRegistro(1, "contabilidad", "Elimino periodo");
         
         response.sendRedirect("Contabilidad/ModificarPeriodoContable.jsp");
     }

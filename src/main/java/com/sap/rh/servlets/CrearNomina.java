@@ -49,7 +49,7 @@ public class CrearNomina extends HttpServlet {
                     empleado+","+cantidad+",'"+cuenta+"','"+estado+"','"+recurso+"','"+regimen+"','"+periodicidad+"','"+tipo+"','"+percepcion+"',-1");
         }
         
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Crea una nomina");
+        int i = c.insercionRegistro(1,  "rh", "Crea una nomina");
         
         response.sendRedirect("RH/CrearNomina.jsp");
     }

@@ -9,32 +9,53 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../Recursos/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="../Recursos/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../Recursos/bootstrap/librerias/popper.min.js" type="text/javascript"></script>
+        <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/librerias/popper.min.js" type="text/javascript"></script>
         <script src="../Gerencia/validaciones/validacion.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
     </head>
     <body>
         <header class="sticky-top">
             <!--barra de navegacion creada con bootstrap-->
-            <nav class="navbar navbar-expand-lg navbar-dark barra" style="background: #C2C2C2;" >
-                <a class="navbar-brand text-white" href="../Gerencia/InicioGerencia.html"><h1>Informaci&oacute;n Gerencial</h1></a>
+            <nav class="navbar navbar-expand-lg navbar-dark barra bg-primary" >
+                <a class="navbar-brand text-white" href="../Gerencia/InicioGerencia.jsp"><h1>Informaci&oacute;n Gerencial</h1></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <li class="nav-item dropdown" style="list-style:none;">
-                        <a id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle" style="color: white;" >Historia</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item dropdown-submenu">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">                    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" id="conf" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
+                            <div class="dropdown-menu bg-primary" aria-labelledby="conf">
+                                <form  onsubmit="return validawebservice('nombre', 'ip', 'puerto');" action="" name="ws" method="post" autocomplete="off">
+                                    <br>
+                                    <label>Nombre&nbsp;del&nbsp;servicio
+                                        <input type="" name="nombre" id="nombre"  class="form-control">
+                                    </label>
+                                    <br>
+                                    <label>Ip&nbsp;del&nbsp;servicio
+                                        <input type="" name="ip" id="ip" class="form-control">
+                                    </label>
+                                    <br>
+                                    <label>Puerto&nbsp;del&nbsp;servicio
+                                        <input type="" name="puerto" id="puerto"  class="form-control">
+                                    </label>
+                                    <br>
+                                    <input type="submit" class="btn btn-danger text-white" value="Guardar">
+                                </form>                                 
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" id="historial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Historial</a>
+                            <div class="dropdown-menu bg-primary" aria-labelledby="historial">
                                 <form onsubmit="return validalog(fecha, area, horaInicio, horaFin);" action="../Consultalog" name="historial" method="post" autocomplete="off">
                                     <label>Fecha
                                         <input type="date" name="fecha" id="fecha" max="3000-12-31"  min="1000-01-01" class="form-control">
                                     </label>
                                     <br>
-                                    <p>Area</p>
+                                    <p>Area</p> 
                                     <select name="area" id="area">
                                         <option value="gerencia">Gerencia</option> 
                                         <option value="rh">Recursos Humanos</option> 
@@ -53,40 +74,11 @@ and open the template in the editor.
                                     </div>
                                     <br>
                                     <input type="submit" class="btn btn-danger text-white" value="Generar">
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" style="list-style:none;">
-                        <a id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle" style="color: white;" >Configuración</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item dropdown-submenu">
-                                <p>Configurar Web Services</p>
-                                <form  onsubmit="return validawebservice('nombre', 'ip', 'puerto');" action="" name="ws" method="post" autocomplete="off">
-                                    <br>
-                                    <label>Nombre&nbsp;del&nbsp;servicio
-                                        <input type="" name="nombre" id="nombre"  class="form-control">
-                                    </label>
-                                    <br>
-                                    <label>Ip&nbsp;del&nbsp;servicio
-                                        <input type="" name="ip" id="ip" class="form-control">
-                                    </label>
-                                    <br>
-                                    <label>Puerto&nbsp;del&nbsp;servicio
-                                        <input type="" name="puerto" id="puerto"  class="form-control">
-                                    </label>
-                                    <br>
-                                    <input type="submit" class="btn btn-danger text-white" value="Guardar">
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" style="list-style:none">
-                        <a class="nav-link" href="#" style="color: white">Salir</a>
-                    </li>
+                                </form>                                   
+                            </div>
+                        </li>
+                    </ul>   
                 </div>
-
-
             </nav>
         </header>
         <div id="principal">
@@ -116,7 +108,7 @@ and open the template in the editor.
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div style="background-color: #fff; margin: 20px 2px;">
-                            <a href="../RecursosHumanos/rh_index.jsp">
+                            <a href="../RH/rh_index.jsp">
                                 <h1 style="color: black; margin-left: 20px;">Recursos Humanos</h1>
                                 <div class="row justify-content-center" style="margin-left: 20px; margin-right: 20px;">
                                     <canvas id="gRH" width="100%" height="80px"></canvas>
@@ -163,7 +155,7 @@ and open the template in the editor.
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div style="background-color: #fff; margin: 0px 10px 10px 10px;">
                     <br>
-                        <form action="../GeneraReporte" method="post">
+                    <form action="../GeneraReporte" method="post">
                         <center>
                             <input class="btn btn-danger text-white" style="background-color: #000" type="submit" value="Generar Reporte" />
                         </center>

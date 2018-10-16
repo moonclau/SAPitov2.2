@@ -54,7 +54,7 @@ public class ContratarEmpleado extends HttpServlet {
                 "'"+nombre+"','"+paterno+"','"+materno+"','"+nac+"','"+curp+"','"+rfc+"',"+edad+",'"+lugar+"','"+dir+"','"+tel+"',"+area
                         +","+puesto+",'"+horario+"','"+activ+"',"+sueldo+",'"+cuenta+"','Activo','sap123'");
         
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Contratacion de empleado empleado");
+        int i = c.insercionRegistro(1,  "rh", "Contratacion de empleado");
         
         response.sendRedirect("RH/ContratarEmpleado.jsp");
     }
