@@ -25,7 +25,7 @@ and open the template in the editor.
         <header class="sticky-top">
             <!--barra de navegacion creada con bootstrap-->
             <nav class="navbar navbar-expand-lg navbar-dark barra bg-primary" >
-                <a class="navbar-brand text-white" href="../Gerencia/InicioGerencia.jsp"><h1>Informaci&oacute;n Gerencial</h1></a>
+                <a class="navbar-brand text-white" href="../Gerencia/InicioGerencia.jsp"><h2>Informaci&oacute;n Gerencial</h2></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,18 +33,18 @@ and open the template in the editor.
                     <ul class="navbar-nav mr-auto">                    
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" id="conf" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
-                            <div class="dropdown-menu bg-primary" aria-labelledby="conf">
+                            <div class="dropdown-menu bg-primary" aria-labelledby="conf" >
                                 <form  onsubmit="return validawebservice('nombre', 'ip', 'puerto');" action="" name="ws" method="post" autocomplete="off">
                                     <br>
-                                    <label>Nombre&nbsp;del&nbsp;servicio
+                                    <label class="text-white">Nombre&nbsp;del&nbsp;servicio
                                         <input type="" name="nombre" id="nombre"  class="form-control">
                                     </label>
                                     <br>
-                                    <label>Ip&nbsp;del&nbsp;servicio
+                                    <label class="text-white">Ip&nbsp;del&nbsp;servicio
                                         <input type="" name="ip" id="ip" class="form-control">
                                     </label>
                                     <br>
-                                    <label>Puerto&nbsp;del&nbsp;servicio
+                                    <label class="text-white">Puerto&nbsp;del&nbsp;servicio
                                         <input type="" name="puerto" id="puerto"  class="form-control">
                                     </label>
                                     <br>
@@ -56,11 +56,11 @@ and open the template in the editor.
                             <a class="nav-link dropdown-toggle text-white" id="historial" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Historial</a>
                             <div class="dropdown-menu bg-primary" aria-labelledby="historial">
                                 <form onsubmit="return validalog(fecha, area, horaInicio, horaFin);" action="../Consultalog" name="historial" method="post" autocomplete="off">
-                                    <label>Fecha
+                                    <label class="text-white">Fecha
                                         <input type="date" name="fecha" id="fecha" max="3000-12-31"  min="1000-01-01" class="form-control">
                                     </label>
                                     <br>
-                                    <p>Area</p> 
+                                    <p class="text-white">Area</p> 
                                     <select name="area" id="area">
                                         <option value="gerencia">Gerencia</option> 
                                         <option value="rh">Recursos Humanos</option> 
@@ -71,11 +71,11 @@ and open the template in the editor.
                                     </select>
                                     <br>
                                     <br>
-                                    <label>Intervalo&nbsp;de&nbsp;tiempo</label>
+                                    <label class="text-white">Intervalo&nbsp;de&nbsp;tiempo</label>
                                     <div id="hora">
-                                        <label>De: <input id="horaInicio" for="example-time-input" type="time" name="horaInicio"  class="form-control"></label>
+                                        <label class="text-white">De: <input id="horaInicio" for="example-time-input" type="time" name="horaInicio"  class="form-control"></label>
                                         <br>
-                                        <label>A:   <input id="horaFin" for="example-time-input" type="time" name="horaFin"  class="form-control"></label>  
+                                        <label class="text-white">A:   <input id="horaFin" for="example-time-input" type="time" name="horaFin"  class="form-control"></label>  
                                     </div>
                                     <br>
                                     <input type="submit" class="btn btn-danger text-white" value="Generar">
