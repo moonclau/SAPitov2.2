@@ -28,7 +28,7 @@
 <body>    
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href="Contabilidad.jsp" class="navbar-brand text-white">Ventas</a>
+            <a href="Ventas.jsp" class="navbar-brand text-white">Ventas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conta_navbar" aria-controls="conta_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,7 +45,7 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Pedido.jsp">&nbsp;Pedido</a>
+                     
                             <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
@@ -71,38 +71,62 @@
             </div>
         </nav>
     </header>
-    <section class="container">
-    <h1 class="text-uppercase text-center">Devolucion</h1>
-        <div class="row">
-        <div class="col-6">
-            <form method="POST" autocomplete="off" action="../Devolucion"  id="formDevolucion" name="formDevolucion">
-            <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Clave de Devolucion:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="claveDevolucion" id="claveDevolucion" required="required">
+    <br>
+    <br>
+    <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
+        <div class="card" text-center>
+            <div class="card-body">
+    
+    <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
+                <div class="container-fluid">
+                    <center>
+                        <form method="POST" autocomplete="off" action="../Devolucion" id="formDevolucion" name="formDevolucion">
+                            <table>
+                                 <h1 class="text-uppercase text-center">Devolucion</h1>
+                                
+                                <tr>
+                                    <td>
+                                        Clave de Devolucion:
+                                    </td>
+                                    <td>
+                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="claveDevolucion" id="claveDevolucion" required="required">
+                                    </td>
+                                    <td>
+                                        Motivo de la Devolucion:
+                                    </td>
+                                    <td>
+                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="motivoDevolucion" id="motivoDevolucion" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Fecha:
+                                    </td>
+                                    <td>
+                                      <input type="date" placeholder="Escribe aqui" class="form-control col-12" name="fechaDevolucion" id="fechDevolucion" required="required">
+                                    </td>
+                                    <td>
+                                        Id Orden de Venta:
+                                    </td>
+                                    <td>
+                                     <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaDevolucion" id="idordendeventaDevolucion" required="required">
+                                    </td>
+                                </tr>
+                               
+                                <tr>
+                                    
+                                    <td colspan="8" align="center">
+                                        <input type="submit" value="Realizar Devolucion" class="btn btn-primary"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </center>
                 </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Fecha:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="fechaDevolucion" id="fechDevolucion" required="required">
-                </div>
-                 <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Motivo de la Devolucion:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="motivoDevolucion" id="motivoDevolucion" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Id Orden de Venta:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="idordendeventaDevolucion" id="idordendeventaDevolucion" required="required">
-                </div>
-                
-               
-                
-            <div class="form-group mx-2">
-                <button class="btn btn-success" type="submit">Realizar devolucion</button>
-                </div>
-                
-            </form>
+            </div><!-- FIN DE SECCION PRINCIPAL -->
             </div>
         </div>
-    </section>
+    </div>
     
    
    

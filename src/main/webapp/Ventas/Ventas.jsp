@@ -27,7 +27,7 @@
 <body>    
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href="Contabilidad.jsp" class="navbar-brand text-white">Ventas</a>
+            <a href="Ventas.jsp" class="navbar-brand text-white">Ventas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conta_navbar" aria-controls="conta_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,7 +44,7 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Pedido.jsp">&nbsp;Pedido</a>
+                        
                             <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
@@ -69,6 +69,24 @@
                 </form>
             </div>
         </nav>
+        <div class="container-fluid">
+    <!--HAciendo una fila para dividir el contenedor en columnas-->
+    <div class="row">
+        <!--Columna de la izquierda-->
+        <div class="col-xs-3 col-md-3 izquierda">            
+               
+        </div>
+        <!--Columna Central-->
+        <div class="col-xs-6 col-md-6 central table-responsive">   
+            <h1 class="text-center">¡Bienvenido al M&oacute;dulo de Ventas!</h1>          
+        </div>
+        <!--columna de la derecha-->
+        <div class="col-xs-3 col-md-3 derecha table-responsive">
+            
+        </div>
+    </div>
+</div>
+        
     </header>
     </body>
 </html>

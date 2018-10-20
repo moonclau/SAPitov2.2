@@ -69,17 +69,19 @@
                   
                 </div>
                     <div class="col-xs-10 col-md-10 central">
-                    <form action="" method="post">
+                    <form action="../BuscarPorIDProducto" method="post">
                         <h5>Buscar ID de producto</h5>
                         <input name="clave" type="text" placeholder="ID producto"/><br><br> 
-                        
+                        </form>
+                <input id="buscar" type="submit" value="Buscar" class="btn btn-success"/><br><br>
                             <hr>
                      <a href="InventarioProductoAgregar.jsp"><label>Agregar producto</label></a>
                      <a href="InventarioProductoModificar.jsp"><label>Modificar producto</label></a>
                     <h4>Reporte</h4>
-                    <input type="submit" value="Generar"/><br>  
+                    
+                <input id="generar" type="submit" value="Generar" class="btn btn-success"/><br><br>
                      
-                </form>
+                
               </div>
             </div>
         </div>
@@ -92,7 +94,8 @@
                 <h4>Productos</h4>
               </div>
             </div>
-    <table class="table-striped table table-bordered table-hover">
+                <div class="table-striped table table-bordered table-hover">
+    <table class="tablap">
       <tr>
         <th>
           clave Producto
@@ -140,6 +143,7 @@
                         }
                     %>
     </table>
+                </div>
        </div>
         </div>
     </div>     
